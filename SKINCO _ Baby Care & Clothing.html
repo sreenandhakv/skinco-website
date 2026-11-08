@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<!-- saved from url=(0067)file:///C:/Users/HP/OneDrive/Desktop/PROJECT01/index,html.html#cart -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SKINCO | Baby Care &amp; Clothing</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #fffaf6;
+            color: #443b36;
+        }
+
+        .topbar {
+            background: #806b60;
+            color: white;
+            text-align: center;
+            padding: 12px;
+            font-size: 13px;
+        }
+
+        header {
+            background: white;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            display:flex;
+            align-items:center;
+            justify-content:flex-start;
+        }
+
+            .logo img {
+                width:85px;
+                height:85px;
+                border-radius:50%;
+                object-fit:cover;
+                border:2px solid #9c7168;
+            }
+
+        nav {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+            nav a {
+                text-decoration: none;
+                color: #443b36;
+                font-size: 14px;
+            }
+
+                nav a:hover {
+                    color: #b77e88;
+                }
+
+        .hero {
+            min-height: 480px;
+            background: linear-gradient(90deg, rgba(65,45,40,.65), rgba(65,45,40,.05)), url("https://images.unsplash.com/photo-1519689680058-324335c77eba?w=1600") center/cover;
+            display: flex;
+            align-items: center;
+            padding: 60px 9%;
+        }
+
+        .hero-content {
+            max-width: 480px;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #b77e88;
+            color: white;
+            text-decoration: none;
+            padding: 14px 28px;
+            border-radius: 5px;
+            margin-top: 25px;
+            border: none;
+            cursor: pointer;
+        }
+
+            .btn:hover {
+                background: #94616d;
+            }
+
+        section {
+            padding: 65px 7%;
+        }
+
+        .heading {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+            .heading h2 {
+                font-size: 32px;
+                color: #806b60;
+            }
+
+            .heading p {
+                color: #887b73;
+                margin-top: 10px;
+            }
+
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 22px;
+        }
+
+        .category {
+            text-align: center;
+            cursor: pointer;
+        }
+
+            .category img {
+                width: 100%;
+                height: 210px;
+                object-fit: cover;
+                border-radius: 100px 100px 10px 10px;
+            }
+
+            .category h3 {
+                margin-top: 15px;
+                color: #806b60;
+            }
+
+            .category:hover {
+                transform: translateY(-5px);
+            }
+
+        .products-section {
+            background: #f8f0eb;
+        }
+
+        .tools {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+            .tools input,
+            .tools select {
+                padding: 12px;
+                border: 1px solid #d8c6bc;
+                border-radius: 5px;
+                background: white;
+                font-size: 14px;
+            }
+
+            .tools input {
+                flex: 1;
+                min-width: 180px;
+            }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .product {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: .3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,.05);
+        }
+
+            .product:hover {
+                transform: translateY(-6px);
+            }
+
+            .product img {
+                width: 100%;
+                height: 240px;
+                object-fit: cover;
+            }
+
+        .product-info {
+            padding: 18px;
+            text-align: center;
+        }
+
+            .product-info h3 {
+                color: #806b60;
+                margin-bottom: 10px;
+            }
+
+            .product-info p {
+                color: #8d817a;
+                font-size: 13px;
+                line-height: 1.5;
+            }
+
+            .product-info button {
+                margin-top: 15px;
+                background: #b77e88;
+                color: white;
+                border: none;
+                padding: 11px 18px;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+
+                .product-info button:hover {
+                    background: #806b60;
+                }
+
+        .cart-section {
+            background: #fffaf6;
+        }
+
+        .cart-item {
+            background: white;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 6px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .remove-btn {
+            background: #806b60;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .story {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 40px;
+        }
+
+            .story img {
+                width: 100%;
+                border-radius: 10px;
+            }
+
+            .story h2 {
+                color: #806b60;
+                font-size: 32px;
+                margin-bottom: 18px;
+            }
+
+            .story p {
+                line-height: 1.9;
+                color: #75665e;
+            }
+
+        .features {
+            background: #e9dcd4;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            text-align: center;
+            gap: 25px;
+        }
+
+        .feature h3 {
+            color: #806b60;
+            margin-bottom: 8px;
+        }
+
+        .feature span {
+            font-size: 30px;
+        }
+
+        .contact {
+            text-align: center;
+        }
+
+            .contact h2 {
+                color: #806b60;
+                margin-bottom: 15px;
+            }
+
+            .contact p {
+                margin: 10px 0;
+            }
+
+        footer {
+            background: #806b60;
+            color: white;
+            padding: 35px 7%;
+            text-align: center;
+            line-height: 2;
+        }
+
+        #cartCount {
+            background: #b77e88;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+        }
+
+        @media(max-width:700px) {
+            header {
+                justify-content: center;
+            }
+
+            nav {
+                justify-content: center;
+                gap: 13px;
+            }
+
+            .hero h1 {
+                font-size: 35px;
+            }
+
+            .story {
+                grid-template-columns: 1fr;
+            }
+
+            .cart-item {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="topbar">
+        WELCOME TO SKINCO PRODUCTS | LITTLE THINGS, BIG LOVE
+    </div>
+
+    <header>
+
+        <div class="logo">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReB_XvqVvqkCxZtbwQ2OIkB-4njZx3GYNyHmIpkTmPCg&s" alt="SKINCO PRODUCTS">
+        </div>
+
+        <nav>
+            <a href="file:///C:/Users/HP/OneDrive/Desktop/PROJECT01/index,html.html#home">HOME</a>
+            <a href="file:///C:/Users/HP/OneDrive/Desktop/PROJECT01/index,html.html#categories">CATEGORIES</a>
+            <a href="file:///C:/Users/HP/OneDrive/Desktop/PROJECT01/index,html.html#shop">SHOP</a>
+            <a href="file:///C:/Users/HP/OneDrive/Desktop/PROJECT01/index,html.html#about">ABOUT US</a>
+            <a href="file:///C:/Users/HP/OneDrive/Desktop/PROJECT01/index,html.html#contact">CONTACT</a>
+            <a href="file:///C:/Users/HP/OneDrive/Desktop/PROJECT01/index,html.html#cart">CART (<span id="cartCount">0</span>)</a>
+        </nav>
+
+    </header>
+
+    <!-- HERO SECTION -->
+
+    <div class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h1>Little Comforts. Endless Love.</h1>
+
+            <p>
+                Discover adorable baby clothing, newborn
+                essentials, bedding and thoughtful gift sets
+                for your little ones.
+            </p>
+
+            <a href="file:///C:/Users/HP/OneDrive/Desktop/PROJECT01/index,html.html#shop" class="btn">EXPLORE COLLECTION</a>
+
+        </div>
+    </div>
+
+    <!-- CATEGORIES -->
+
+    <section id="categories">
+
+        <div class="heading">
+            <h2>Shop By Category</h2>
+            <p>Everything your little one needs in one place.</p>
+        </div>
+
+        <div class="categories">
+
+            <div class="category" onclick="filterCategory('Clothing')">
+                <img src="./SKINCO _ Baby Care &amp; Clothing_files/ChatGPT_Image_Mar_5_2026_12_16_51_PM.png" alt="Baby Clothing">
+                <h3>Baby Clothing</h3>
+            </div>
+
+            <div class="category" onclick="filterCategory('Bedding')">
+                <img src="./SKINCO _ Baby Care &amp; Clothing_files/shopping" alt="Baby Bedding">
+                <h3>Baby Bedding</h3>
+            </div>
+
+            <div class="category" onclick="filterCategory('Diapers')">
+                <img src="./SKINCO _ Baby Care &amp; Clothing_files/WhatsAppImage2026-02-01at1.15.34PM_03a8473e-c93e-43aa-aea4-0eaa6a4b1029.jpg" alt="Baby Essentials">
+                <h3>Baby Essentials</h3>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PRODUCTS -->
+
+    <section class="products-section" id="shop">
+
+        <div class="heading">
+            <h2>Our Collection</h2>
+            <p>Explore our baby products collection.</p>
+        </div>
+
+        <div class="tools">
+
+            <input type="text" id="search" placeholder="Search baby products..." oninput="displayProducts()">
+
+            <select id="categoryFilter" onchange="displayProducts()">
+                <option value="All">All Products</option>
+                <option value="Clothing">Baby Clothing</option>
+                <option value="Bedding">Baby Bedding</option>
+                <option value="Diapers">Diapers</option>
+            </select>
+
+        </div>
+
+        <div class="products" id="productList">
+
+        <div class="product">
+
+        <img src="./SKINCO _ Baby Care &amp; Clothing_files/WhatsAppImage2026-02-01at1.15.34PM_03a8473e-c93e-43aa-aea4-0eaa6a4b1029.jpg" alt="Reusable Baby Diaper">
+
+        <div class="product-info">
+
+        <h3>Reusable Baby Diaper</h3>
+
+        <p>Reusable diaper collection.</p>
+
+        <button onclick="addToCart(4)">
+        Add to Enquiry Cart
+        </button>
+
+        </div>
+
+        </div>
+
+        </div>
+
+    </section>
+
+    <!-- ENQUIRY CART -->
+
+    <section class="cart-section" id="cart">
+
+        <div class="heading">
+            <h2>Your Enquiry Cart</h2>
+            <p>Review your selected SKINCO products.</p>
+        </div>
+
+        <div id="cartItems"><p>Your cart is empty.</p></div>
+
+        <button class="btn" onclick="sendWhatsApp()">
+            SEND ENQUIRY ON WHATSAPP
+        </button>
+
+    </section>
+
+    <!-- ABOUT -->
+
+    <section id="about">
+
+        <div class="story">
+
+            <img src="./SKINCO _ Baby Care &amp; Clothing_files/photo-1476703993599-0035a21b17a9" alt="Baby Collection">
+
+            <div>
+
+                <h2>Welcome to SKINCO</h2>
+
+                <p>
+                    SKINCO PRODUCTS is a textile product business
+                    based in Kannur, Kerala.
+
+                    Our website showcases a collection concept
+                    focused on baby clothing, bedding,  and newborn
+                    essentials.
+
+                    We believe in making everyday baby essentials
+                    special for little ones and their families.
+                </p>
+
+                <a href="file:///C:/Users/HP/OneDrive/Desktop/PROJECT01/index,html.html#shop" class="btn">DISCOVER MORE</a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+
+    <section class="features">
+
+        <div class="feature">
+            <span>👶</span>
+            <h3>Baby Collection</h3>
+            <p>Products for little ones.</p>
+        </div>
+
+        <div class="feature">
+            <span>🧸</span>
+            <h3>Everyday Essentials</h3>
+            <p>Baby care and daily needs.</p>
+        </div>
+
+        <div class="feature">
+            <span>💗</span>
+            <h3>Made With Care</h3>
+            <p>Comfort for little ones.</p>
+        </div>
+
+    </section>
+
+    <!-- CONTACT -->
+
+    <section class="contact" id="contact">
+
+        <h2>Let's Connect!</h2>
+
+        <p>Interested in our products? Contact SKINCO PRODUCTS.</p>
+
+        <p>Location: Kannur, Kerala</p>
+
+        <a class="btn" href="https://wa.me/918592097280" target="_blank" rel="noopener">
+            ENQUIRE ON WHATSAPP
+        </a>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <h2>SKINCO PRODUCTS</h2>
+
+        <p>Little Things, Big Love.</p>
+        <p>Kannur, Kerala, India</p>
+        <p>Contact: 8592097280</p>
+        <p>© 2026 SKINCO PRODUCTS. All Rights Reserved.</p>
+
+    </footer>
+
+    <script>
+
+        // PRODUCT DETAILS
+
+        const products = [
+
+        {
+        name: "Baby Cotton Dress",
+        category: "Clothing",
+        description: "Cute and comfortable baby outfit.",
+        image: "https://www.skinco.in/cdn/shop/files/WhatsApp_Image_2026-03-08_at_3.26.10_PM_1.jpg?v=1786712215&width=1600"
+        },
+
+        {
+        name: "Newborn Baby Wear",
+        category: "Clothing",
+        description: "Everyday newborn clothing collection.",
+        image: "https://www.skinco.in/cdn/shop/files/Gemini_Generated_Image_8m0z6z8m0z6z8m0z.png?v=1786777429&width=1600"
+        },
+
+        {
+        name: "Baby Bedding Set",
+        category: "Bedding",
+        description: "Soft bedding collection for babies.",
+        image: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTnv0YFRI9ytabvDLGi_sc1ulDOIuLBFMTS6UOhZ1HXWO3UHPrV-SkSyZGUMh8bSolcDpGKgfCNNHrnlcH2fJm9o3ub8AOL26TIU1cyihvYNqbrH6RdHo5mTw"
+        },
+
+        {
+        name: "Baby Bedsheet",
+        category: "Bedding",
+        description: "Beautiful baby bedding essentials.",
+        image: "https://www.skinco.in/cdn/shop/files/WhatsApp_Image_2026-03-08_at_3.25.51_PM_2.jpg?v=1786778001&width=1600"
+        },
+
+        {
+        name: "Reusable Baby Diaper",
+        category: "Diapers",
+        description: "Reusable diaper collection.",
+        image: "https://www.skinco.in/cdn/shop/files/WhatsAppImage2026-02-01at1.15.34PM_03a8473e-c93e-43aa-aea4-0eaa6a4b1029.jpg?v=1769932513&width=1600"
+        },
+
+        ];
+
+        // CART
+
+        let cart = [];
+
+        // DISPLAY PRODUCTS
+
+        function displayProducts() {
+
+        const search = document.getElementById("search").value.toLowerCase();
+
+        const category = document.getElementById("categoryFilter").value;
+
+        const list = document.getElementById("productList");
+
+        const filtered = products.filter(product => {
+
+        const matchesSearch =
+        product.name.toLowerCase().includes(search) ||
+        product.description.toLowerCase().includes(search);
+
+        const matchesCategory =
+        category === "All" || product.category === category;
+
+        return matchesSearch && matchesCategory;
+
+        });
+
+        list.innerHTML = "";
+
+        if (filtered.length === 0) {
+
+        list.innerHTML = "<p>No products found.</p>";
+        return;
+
+        }
+
+        filtered.forEach(product => {
+
+        const index = products.indexOf(product);
+
+        list.innerHTML += `
+
+        <div class="product">
+
+        <img src="${product.image}" alt="${product.name}">
+
+        <div class="product-info">
+
+        <h3>${product.name}</h3>
+
+        <p>${product.description}</p>
+
+        <button onclick="addToCart(${index})">
+        Add to Enquiry Cart
+        </button>
+
+        </div>
+
+        </div>
+
+        `;
+
+        });
+
+        }
+
+        // FILTER CATEGORY
+
+        function filterCategory(category) {
+
+        document.getElementById("categoryFilter").value = category;
+
+        displayProducts();
+
+        document.getElementById("shop").scrollIntoView({
+        behavior: "smooth"
+        });
+
+        }
+
+        // ADD TO CART
+
+        function addToCart(index) {
+
+        cart.push(products[index]);
+
+        updateCart();
+
+        alert(products[index].name + " added to your enquiry cart!");
+
+        }
+
+        // UPDATE CART
+
+        function updateCart() {
+
+        document.getElementById("cartCount").innerText = cart.length;
+
+        const cartItems = document.getElementById("cartItems");
+
+        if (cart.length === 0) {
+
+        cartItems.innerHTML = "<p>Your cart is empty.</p>";
+        return;
+
+        }
+
+        cartItems.innerHTML = "";
+
+        cart.forEach((product, index) => {
+
+        cartItems.innerHTML += `
+
+        <div class="cart-item">
+
+        <span>${product.name}</span>
+
+        <button class="remove-btn"
+        onclick="removeFromCart(${index})">
+        Remove
+        </button>
+
+        </div>
+
+        `;
+
+        });
+
+        }
+
+        // REMOVE PRODUCT
+
+        function removeFromCart(index) {
+
+        cart.splice(index, 1);
+
+        updateCart();
+
+        }
+
+        // WHATSAPP ENQUIRY
+
+        function sendWhatsApp() {
+
+        if (cart.length === 0) {
+
+        alert("Your enquiry cart is empty!");
+        return;
+
+        }
+
+        let message = "Hello SKINCO PRODUCTS! I am interested in these products:\n\n";
+
+        cart.forEach((product, index) => {
+
+        message += (index + 1) + ". " + product.name + "\n";
+
+        });
+
+        message += "\nPlease share more details. Thank you!";
+
+        const whatsappURL =
+        "https://wa.me/918592097280?text=" +
+        encodeURIComponent(message);
+
+        window.open(whatsappURL, "_blank");
+
+        }
+
+        // INITIALIZE WEBSITE
+
+        displayProducts();
+
+        updateCart();
+
+    </script>
+
+
+
+</body></html>
